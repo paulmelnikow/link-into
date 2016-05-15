@@ -1,7 +1,8 @@
 {
   "name": "link-into",
   "description": "Create a tree of symlinks from glob patterns",
-  "version": "1.0.0",
+  "keywords": ["symlink"],
+  "version": "1.0.1",
   "license": "MIT",
   "main": "link-into.js",
   "bin": {
