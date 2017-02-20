@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var linkInto = require('./link-into');
 
 var args = process.argv.slice(2);

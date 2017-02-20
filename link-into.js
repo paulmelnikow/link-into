@@ -1,4 +1,4 @@
-/*global Promise */
+'use strict';
 
 var promisify = require('es6-promisify'),
     symlink = promisify(require('fs').symlink),
