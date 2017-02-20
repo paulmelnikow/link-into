@@ -1,2 +1,2 @@
 extends:
-    - "plugin:bodylabs/common"
+    - "plugin:bodylabs/common-es6"
