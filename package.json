@@ -14,10 +14,7 @@
     "lint": "eslint '**/*.js'",
     "test": "npm run lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:paulmelnikow/link-into.git"
-  },
+  "repository": "paulmelnikow/link-into",
   "dependencies": {
     "es6-promisify": "^4.0.0",
     "glob": "^7.0.3",
@@ -25,7 +22,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "eslint": "^3.15.0",
-    "eslint-plugin-pnm": "^1.0.0"
+    "eslint": "^5.9.0",
+    "eslint-plugin-pnm": "^2.0.0"
   }
 }
