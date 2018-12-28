@@ -45,8 +45,8 @@ npm install --save-dev link-into
 
 ## Contribute
 
--   Issue Tracker: https://github.com/paulmelnikow/link-into/issues
--   Source Code: https://github.com/paulmelnikow/link-into
+- Issue Tracker: https://github.com/paulmelnikow/link-into/issues
+- Source Code: https://github.com/paulmelnikow/link-into
 
 Pull requests welcome!
 
