@@ -1,5 +1,4 @@
-link-into
-=========
+# link-into
 
 Create a tree of symlinks from glob patterns.
 
@@ -29,31 +28,23 @@ Creates this tree:
         └── foo.svg -> ../../assets/foo.svg
 ```
 
-
-Installation
-------------
+## Installation
 
 ```
 npm install --save-dev link-into
 ```
 
-
-Contribute
-----------
+## Contribute
 
 - Issue Tracker: https://github.com/paulmelnikow/link-into/issues
 - Source Code: https://github.com/paulmelnikow/link-into
 
 Pull requests welcome!
 
-
-Support
--------
+## Support
 
 If you are having issues, please let me know.
 
-
-License
--------
+## License
 
 The project is licensed under the MIT license.

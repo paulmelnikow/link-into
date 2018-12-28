@@ -14,16 +14,19 @@ const createLink = (target, linkPath) => {
 }
 
 const linkFilesMatchingPattern = (destination, sourcePattern) =>
-  glob(sourcePattern)
-    .then(files => Promise.all(files.map(file => {
-      const linkPath = path.join(destination, file)
+  glob(sourcePattern).then(files =>
+    Promise.all(
+      files.map(file => {
+        const linkPath = path.join(destination, file)
 
-      // Interpret patterns relative to cwd.
-      const relative = path.relative(path.dirname(linkPath), process.cwd())
-      const linkPointsTo = path.join(relative, file)
+        // Interpret patterns relative to cwd.
+        const relative = path.relative(path.dirname(linkPath), process.cwd())
+        const linkPointsTo = path.join(relative, file)
 
-      return createLink(linkPointsTo, linkPath)
-    })))
+        return createLink(linkPointsTo, linkPath)
+      })
+    )
+  )
 
 const linkInto = (destination, sourcePatterns) => {
   const patternIsAbsolute = _(sourcePatterns).map(path.isAbsolute)
@@ -31,8 +34,10 @@ const linkInto = (destination, sourcePatterns) => {
     return Promise.reject(Error('Source patterns should be relative'))
   }
 
-  return Promise.all(sourcePatterns.map(sourcePattern =>
-    linkFilesMatchingPattern(destination, sourcePattern)
-  ))
+  return Promise.all(
+    sourcePatterns.map(sourcePattern =>
+      linkFilesMatchingPattern(destination, sourcePattern)
+    )
+  )
 }
 module.exports = linkInto
