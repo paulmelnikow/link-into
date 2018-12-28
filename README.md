@@ -5,7 +5,7 @@
 [![build](https://img.shields.io/circleci/project/github/paulmelnikow/link-into.svg?style=flat-square)][build]
 [![code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)][prettier]
 
-[npm]: https://npmjs.comlink-into/
+[npm]: https://npmjs.com/link-into/
 [build]: https://circleci.com/gh/paulmelnikow/link-into/tree/master
 [prettier]: https://prettier.io/
 
@@ -45,8 +45,8 @@ npm install --save-dev link-into
 
 ## Contribute
 
-- Issue Tracker: https://github.com/paulmelnikow/link-into/issues
-- Source Code: https://github.com/paulmelnikow/link-into
+-   Issue Tracker: https://github.com/paulmelnikow/link-into/issues
+-   Source Code: https://github.com/paulmelnikow/link-into
 
 Pull requests welcome!
 
