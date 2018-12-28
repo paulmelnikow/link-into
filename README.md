@@ -1,5 +1,14 @@
 # link-into
 
+[![version](https://img.shields.io/npm/v/link-into.svg?style=flat-square)][npm]
+[![license](https://img.shields.io/npm/l/link-into.svg?style=flat-square)][npm]
+[![build](https://img.shields.io/circleci/project/github/paulmelnikow/link-into.svg?style=flat-square)][build]
+[![code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)][prettier]
+
+[npm]: https://npmjs.com/link-into
+[build]: https://circleci.com/gh/paulmelnikow/link-into/tree/master
+[prettier]: https://prettier.io/
+
 Create a tree of symlinks from glob patterns.
 
 Given the following tree:
