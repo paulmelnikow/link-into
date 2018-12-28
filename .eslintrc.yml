@@ -26,5 +26,5 @@ rules:
   arrow-body-style: ['error', 'as-needed']
   object-shorthand: ['error', 'properties']
   prefer-template: 'error'
-  promise/prefer-await-to-then: 'error'
-
+  # Future
+  # promise/prefer-await-to-then: 'error'
