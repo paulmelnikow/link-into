@@ -2,7 +2,9 @@
   "name": "link-into",
   "description": "Create a tree of symlinks from glob patterns",
   "keywords": [
-    "symlink"
+    "symlink",
+    "glob",
+    "cli"
   ],
   "version": "1.0.3",
   "license": "MIT",
