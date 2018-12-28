@@ -4,12 +4,15 @@
   "keywords": [
     "symlink"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "link-into.js",
   "bin": {
     "link-into": "cli.js"
   },
+  "files": [
+    "*.js"
+  ],
   "scripts": {
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier --write \"**/*.@(js|md|yml)\"",
@@ -17,6 +20,9 @@
     "test": "npm run lint && npm run prettier-check"
   },
   "repository": "paulmelnikow/link-into",
+  "engines": {
+    "node": ">= 6.0"
+  },
   "dependencies": {
     "es6-promisify": "^6.0.1",
     "glob": "^7.0.3",
