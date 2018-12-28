@@ -8,7 +8,7 @@ const linkInto = require('./link-into')
 
 const args = process.argv.slice(2)
 
-if (! args.length) {
+if (!args.length) {
   console.log('Usage: link-into destination source-pattern ...')
   process.exit(2)
 }
@@ -16,8 +16,7 @@ if (! args.length) {
 const destination = args.shift(),
   sourcePatterns = args
 
-linkInto(destination, sourcePatterns)
-  .catch(err => {
-    console.log(err.stack)
-    process.exit(1)
-  })
+linkInto(destination, sourcePatterns).catch(err => {
+  console.log(err.stack)
+  process.exit(1)
+})
