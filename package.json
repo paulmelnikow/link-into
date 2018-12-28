@@ -13,7 +13,7 @@
   "scripts": {
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier --write \"**/*.@(js|md|yml)\"",
-    "prettier-check": "eslint \"**/*.@(js|md|yml)\"",
+    "prettier-check": "prettier-check \"**/*.@(js|md|yml)\"",
     "test": "npm run lint && npm run prettier-check"
   },
   "repository": "paulmelnikow/link-into",
