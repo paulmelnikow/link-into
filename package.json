@@ -18,8 +18,8 @@
   "scripts": {
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier --write \"**/*.@(js|md|yml)\"",
-    "prettier-check": "prettier-check \"**/*.@(js|md|yml)\"",
-    "test": "npm run lint && npm run prettier-check"
+    "prettier:check": "prettier --check \"**/*.@(js|md|yml)\"",
+    "test": "npm run lint && npm run prettier:check"
   },
   "repository": "paulmelnikow/link-into",
   "engines": {
@@ -40,7 +40,6 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "prettier": "1.17.1",
-    "prettier-check": "^2.0.0"
+    "prettier": "1.17.1"
   }
 }
