@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.0 – July 1, 2019
+
+- BREAKING CHANGE: Require Node 10+.
+- Use `util.promisify` instead of es6-promisify
+- Use fs.promises APIs (experimental in Node 10 and stable in Node 12)
+- Add a test
+- Replace underscore dependency with native
+
 ## 2.0.0 – June 1, 2019
 
 - BREAKING CHANGE: Require Node 8+.
