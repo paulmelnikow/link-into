@@ -1,43 +1,41 @@
 'use strict'
 
-const promisify = require('es6-promisify'),
-  symlink = promisify(require('fs').symlink),
-  mkdirp = promisify(require('mkdirp')),
-  glob = promisify(require('glob')),
+const { promisify } = require('util'),
   path = require('path'),
-  _ = require('underscore')
+  fs = require('fs').promises,
+  mkdirp = promisify(require('mkdirp')),
+  glob = promisify(require('glob'))
 
-const createLink = (target, linkPath) => {
+async function createLink(target, linkPath) {
   const linkDir = path.dirname(linkPath)
-
-  return mkdirp(linkDir).then(() => symlink(target, linkPath))
+  await mkdirp(linkDir)
+  await fs.symlink(target, linkPath)
 }
 
-const linkFilesMatchingPattern = (destination, sourcePattern) =>
-  glob(sourcePattern).then(files =>
-    Promise.all(
-      files.map(file => {
-        const linkPath = path.join(destination, file)
+async function linkFilesMatchingPattern(destination, sourcePattern) {
+  const files = await glob(sourcePattern)
 
-        // Interpret patterns relative to cwd.
-        const relative = path.relative(path.dirname(linkPath), process.cwd())
-        const linkPointsTo = path.join(relative, file)
+  await Promise.all(
+    files.map(async file => {
+      const linkPath = path.join(destination, file)
 
-        return createLink(linkPointsTo, linkPath)
-      })
-    )
+      // Interpret patterns relative to cwd.
+      const relative = path.relative(path.dirname(linkPath), process.cwd())
+      const linkPointsTo = path.join(relative, file)
+
+      return createLink(linkPointsTo, linkPath)
+    })
   )
+}
 
-const linkInto = (destination, sourcePatterns) => {
-  const patternIsAbsolute = _(sourcePatterns).map(path.isAbsolute)
-  if (_(patternIsAbsolute).some()) {
-    return Promise.reject(Error('Source patterns should be relative'))
+module.exports = async function linkInto(destination, sourcePatterns) {
+  if (sourcePatterns.some(path.isAbsolute)) {
+    throw Error('Source patterns should be relative')
   }
 
-  return Promise.all(
+  await Promise.all(
     sourcePatterns.map(sourcePattern =>
       linkFilesMatchingPattern(destination, sourcePattern)
     )
   )
 }
-module.exports = linkInto
