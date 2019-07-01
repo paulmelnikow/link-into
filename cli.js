@@ -4,19 +4,31 @@
 
 'use strict'
 
-const linkInto = require('./link-into')
+const linkInto = require('.')
 
-const args = process.argv.slice(2)
+async function main() {
+  const args = process.argv.slice(2)
 
-if (!args.length) {
-  console.log('Usage: link-into destination source-pattern ...')
-  process.exit(2)
+  if (!args.length) {
+    console.log('Usage: link-into destination source-pattern ...')
+    process.exit(2)
+  }
+
+  const destination = args.shift(),
+    sourcePatterns = args
+
+  await linkInto(destination, sourcePatterns)
 }
 
-const destination = args.shift(),
-  sourcePatterns = args
+module.export = main
 
-linkInto(destination, sourcePatterns).catch(err => {
-  console.log(err.stack)
-  process.exit(1)
-})
+if (require.main === module) {
+  ;(async () => {
+    try {
+      await main()
+    } catch (e) {
+      console.error(e)
+      process.exit(1)
+    }
+  })()
+}

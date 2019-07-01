@@ -19,19 +19,19 @@
     "lint": "eslint \"**/*.js\"",
     "prettier": "prettier --write \"**/*.@(js|md|yml)\"",
     "prettier:check": "prettier --check \"**/*.@(js|md|yml)\"",
-    "test": "npm run lint && npm run prettier:check"
+    "mocha": "mocha test.js",
+    "test": "npm run mocha && npm run lint && npm run prettier:check"
   },
   "repository": "paulmelnikow/link-into",
   "engines": {
-    "node": ">= 8.0"
+    "node": ">= 10.0"
   },
   "dependencies": {
-    "es6-promisify": "^6.0.1",
     "glob": "^7.0.3",
-    "mkdirp": "^0.5.1",
-    "underscore": "^1.8.3"
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^12.0.0",
@@ -40,6 +40,8 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "prettier": "1.18.2"
+    "mocha": "^6.1.4",
+    "prettier": "1.18.2",
+    "tmp-promise": "^2.0.1"
   }
 }
