@@ -13,7 +13,8 @@
     "link-into": "cli.js"
   },
   "files": [
-    "*.js"
+    "*.js",
+    "!test.js"
   ],
   "scripts": {
     "lint": "eslint \"**/*.js\"",
