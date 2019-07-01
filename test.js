@@ -3,7 +3,6 @@
 const path = require('path')
 const { promises: fs } = require('fs')
 const tmp = require('tmp-promise')
-const { expect } = require('chai')
 const linkInto = require('.')
 
 describe('linkInto', function() {
