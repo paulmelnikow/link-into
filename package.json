@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "glob": "^7.0.3",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
