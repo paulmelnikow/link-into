@@ -3,7 +3,7 @@
 const { promisify } = require('util'),
   path = require('path'),
   fs = require('fs').promises,
-  mkdirp = promisify(require('mkdirp')),
+  mkdirp = require('mkdirp'),
   glob = promisify(require('glob'))
 
 async function createLink(target, linkPath) {
